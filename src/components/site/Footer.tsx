@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Phone, MessageCircle, MapPin } from "lucide-react";
+import { Instagram, Phone, MessageCircle, MapPin, Trophy } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { WaveDivider } from "./WaveDivider";
 
@@ -18,6 +18,10 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-3">
               <span className="text-lg font-extrabold tracking-tight">AQUA BRABUS KG</span>
+            </div>
+            <div className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-gold/50 bg-white/5 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-gold">
+              <Trophy className="h-3.5 w-3.5" />
+              <span>{t("badge.leader2025.short")}</span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-white/70">{t("footer.desc")}</p>
             <a
