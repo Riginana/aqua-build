@@ -92,9 +92,6 @@ export function Header() {
             <Phone className="h-4 w-4" />
             <span>{PHONE_DISPLAY}</span>
           </a>
-          <a href={`tel:${PHONE_TEL}`} className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-cyan text-white sm:hidden" aria-label="call">
-            <Phone className="h-5 w-5" />
-          </a>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
