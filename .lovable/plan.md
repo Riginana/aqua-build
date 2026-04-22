@@ -1,12 +1,47 @@
 
-## Remove logo image from footer
+## Add "Leader 2025" badge/claim across the site
 
-Delete the `<img>` logo from the footer's brand block in `src/components/site/Footer.tsx`. The "AQUA BRABUS KG" text next to it stays.
+Добавим отметку «Лидер в строительстве водных и банных комплексов 2025» в ключевых местах, где она будет работать как доверительный сигнал.
 
-### Change
-- In `src/components/site/Footer.tsx`, remove the `<img src={logo} ... />` element on line 21.
-- Remove the now-unused `import logo from "@/assets/logo-v2.png";` import at the top of the file.
-- Keep the surrounding `<div className="flex items-center gap-3">` and the `<span>AQUA BRABUS KG</span>` text intact.
+### Где появится
 
-### Result
-Footer's top-left brand area shows only the "AQUA BRABUS KG" wordmark, no logo image.
+1. **Hero на главной** (`src/components/site/sections.tsx` → `Hero`)
+   - Над заголовком h1 добавим бейдж-плашку: иконка кубка + текст «Лидер в строительстве водных и банных комплексов 2025» / «2025-жылдын суу жана мончо комплекстерин курууда лидер».
+   - Стиль: пилюля с полупрозрачным белым фоном, золотая обводка, иконка `Trophy` (lucide).
+
+2. **TrustBar** (`src/components/site/sections.tsx` → `TrustBar`)
+   - Заменим один из 4 пунктов (`trust.objects`) на новый «Лидер 2025» с иконкой `Trophy`/`Award`. Либо — лучше — добавим 5-й пункт и поменяем сетку на `md:grid-cols-5`. Выберем добавление 5-го пункта, чтобы не терять «100+ объектов».
+
+3. **Страница «О компании»** (`src/routes/about.tsx`)
+   - В hero-блок под заголовок добавим тот же бейдж «Лидер 2025».
+   - В список ценностей (`values`) добавим пятый пункт `about.v5` = «Лидер отрасли 2025».
+
+4. **Футер** (`src/components/site/Footer.tsx`)
+   - Под названием компании в брендовой колонке добавим маленькую плашку «🏆 Лидер 2025».
+
+### Переводы
+
+В `src/lib/i18n.tsx` добавить ключи для RU и KG:
+- `badge.leader2025` — «Лидер в строительстве водных и банных комплексов 2025» / «2025-жылдын суу жана мончо комплекстерин курууда лидер»
+- `badge.leader2025.short` — «Лидер 2025» / «2025 лидер»
+- `trust.leader` — «Лидер отрасли 2025» / «Тармактын лидери 2025»
+- `about.v5` — «Лидер в строительстве водных и банных комплексов 2025» / «Суу жана мончо комплекстерин курууда лидер 2025»
+
+### Технические детали
+
+- Иконка: `Trophy` из `lucide-react` (уже используется в TrustBar).
+- Цвет акцента: `text-gold` (есть в проекте, используется в звёздах отзывов) + `border-gold/40 bg-white/10` для бейджа на тёмном фоне; `bg-gold/10 text-gold-foreground border-gold/30` на светлом.
+- Меняем `TrustBar` сетку: `md:grid-cols-4` → `md:grid-cols-5`, отступы остаются.
+- SEO: в `head()` главной и `about.tsx` обновим `description`, добавив фразу «Лидер 2025».
+
+### Затронутые файлы
+
+- `src/lib/i18n.tsx` — новые ключи переводов
+- `src/components/site/sections.tsx` — Hero бейдж, TrustBar пункт
+- `src/routes/about.tsx` — бейдж в hero, пункт в values, обновить meta
+- `src/routes/index.tsx` — обновить meta description
+- `src/components/site/Footer.tsx` — мини-бейдж под названием
+
+### Результат
+
+На главной, в шапке «О компании», в trust-баре и футере посетитель сразу видит статус «Лидер 2025», что усиливает доверие и работает на конверсию.
