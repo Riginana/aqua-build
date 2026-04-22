@@ -1,15 +1,11 @@
 
-## Remove phone icon from mobile navigation
+## Remove company name text from header navigation
 
-Remove the cyan circular phone call icon from the mobile header bar. The desktop phone pill (with full number) stays unchanged.
+Remove the "AQUA BRABUS KG" text and tagline next to the logo in the header. Only the logo image will remain on the left side.
 
 ### Change to `src/components/site/Header.tsx`
-- Delete the mobile-only `<a>` element with the `Phone` icon (the one with classes `inline-flex h-11 w-11 ... sm:hidden`).
-- Keep the hamburger menu and language switcher in place.
+- Delete the `<span className="hidden flex-col leading-tight sm:flex">...</span>` block that contains the company name and the bilingual tagline.
+- Keep the `<Link to="/">` wrapper with the `<img>` logo intact.
 
-### Resulting mobile header right side
-```text
-[RU|KG]  [☰]
-```
-
-Users can still call via the contact page and footer.
+### Result
+Left side of header shows only the logo image, on all screen sizes.
