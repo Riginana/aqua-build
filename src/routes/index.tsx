@@ -1,26 +1,30 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteLayout } from "@/components/site/Layout";
+import { Hero, TrustBar, Services, WhyUs, HowWeWork, ProjectsPreview, Testimonials, CtaForm } from "@/components/site/sections";
 
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "AQUA BRABUS KG — Бассейны, хамам, сауна, фонтаны под ключ в Кыргызстане" },
+      { name: "description", content: "Профессиональное строительство бассейнов, хамамов, саун, фонтанов и очистных сооружений под ключ. 5+ лет опыта, 100+ объектов по всему Кыргызстану." },
+      { property: "og:title", content: "AQUA BRABUS KG — строительство бассейнов под ключ" },
+      { property: "og:description", content: "Бассейны, хамам, финская сауна, русская баня, фонтаны и очистные сооружения. Под ключ. Гарантия 5 лет." },
+    ],
+  }),
+  component: HomePage,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function HomePage() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <SiteLayout>
+      <Hero />
+      <TrustBar />
+      <Services />
+      <WhyUs />
+      <HowWeWork />
+      <ProjectsPreview />
+      <Testimonials />
+      <CtaForm />
+    </SiteLayout>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
