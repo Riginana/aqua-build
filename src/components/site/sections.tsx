@@ -64,8 +64,8 @@ export function Hero() {
           <Link to="/contact" className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-cyan px-7 text-sm font-bold text-white shadow-lg transition-all hover:shadow-[var(--shadow-glow)]">
             {t("cta.consult")}
           </Link>
-          <Link to="/projects" className="inline-flex min-h-[48px] items-center justify-center rounded-full border-2 border-white/80 bg-white/0 px-7 text-sm font-bold text-white backdrop-blur transition-colors hover:bg-white hover:text-navy">
-            {t("cta.projects")}
+          <Link to="/projects" className="inline-flex min-h-[48px] items-center px-2 text-sm font-semibold text-white/80 transition-colors hover:text-white hover:underline underline-offset-4">
+            {t("cta.projects")} →
           </Link>
         </motion.div>
       </div>
