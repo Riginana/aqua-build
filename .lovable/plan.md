@@ -1,57 +1,28 @@
 
-# AQUA BRABUS KG — Website Plan
+## Move language switcher next to phone icon on mobile
 
-A professional, multi-page marketing site for a pool/hammam/sauna/fountain construction company based in Kyrgyzstan. Bilingual (Russian + Kyrgyz) with a language switcher.
+Currently the RU/KG language switcher is hidden on mobile (`hidden md:flex`) and only appears inside the opened hamburger menu. The user wants it visible in the top bar on mobile, placed to the left of the phone call icon.
 
-## Brand & Design System
-- **Colors**: Navy `#1A2C6B`, Cyan `#00BCD4`, Teal `#0097A7`, Gold `#FFD600`, Light Gray `#F4F7FA`, White
-- **Typography**: Bold uppercase navy headings, clean sans-serif body
-- **Logo**: Use uploaded `Aqua_logo.png` (copied to `src/assets/`), white inverted version in footer
-- **Decorative**: SVG wave dividers between sections, subtle ripple animation in hero, fade-in on scroll, cyan hover glow on CTAs
+### Changes to `src/components/site/Header.tsx`
 
-## Languages
-- **RU (default)** + **KG (Kyrgyz)** toggle in header
-- Translations stored in a small i18n dictionary (`src/lib/i18n.ts`), language persisted in localStorage
-- All UI text, nav, sections, forms translated
+1. **Add a compact mobile language switcher** in the right-side action group, positioned before the mobile phone icon button:
+   - Visible only on mobile (`flex sm:hidden` for the new compact switcher)
+   - Two small pill buttons (RU / KG), height 44px to keep touch target accessibility
+   - Active state: navy background + white text; inactive: navy/70 text with border
+   - Compact sizing (px-2, text-xs) so both buttons + phone icon + hamburger fit comfortably at 390px width
 
-## Route Structure (separate routes for SEO)
-- `/` — Home (Hero, Trust Bar, Services preview, Why Us, How We Work, Projects preview, Testimonials, CTA form)
-- `/services` — Full services detail (6 cards expanded)
-- `/projects` — Full gallery with category filter (Все / Бассейны / Хамам / Сауна / Фонтаны)
-- `/about` — About company, experience, team values
-- `/contact` — Contact form + phone/WhatsApp/Instagram/address
+2. **Keep the existing desktop switcher** (`hidden md:flex`) unchanged for tablet/desktop.
 
-Each route has its own `head()` with title, description, og:title, og:description, og:image (using uploaded pool photos).
+3. **Remove the duplicate switcher from the open hamburger panel** since it's now always visible in the header bar (avoids redundancy).
 
-## Shared Layout
-- **Header** (sticky, white, shadow on scroll): Logo left, nav center, phone pill `+996 707 148 555` (tel + WhatsApp link) + RU/KG switcher right, hamburger on mobile
-- **Footer** (navy): Logo + description + Instagram `@aqua_brabus_kg`, nav column, contacts column, wave SVG top decoration, copyright
+### Layout order on mobile (right side)
+```text
+[RU|KG]  [📞]  [☰]
+```
 
-## Home Page Sections
-1. **Hero** — Full-width pool background (uploaded image), navy→cyan gradient overlay, H1 + sub + 2 CTAs (Получить консультацию / Смотреть проекты), animated wave divider
-2. **Trust Bar** — Navy strip: 5+ лет опыта, 100+ объектов, по всему Кыргызстану, гарантия
-3. **Services** — 3×2 grid, 6 cards with themed SVG icons, cyan top border, hover lift
-4. **Why Us** — Light gray bg, 4 feature blocks with cyan icons
-5. **How We Work** — Navy bg, 4-step horizontal timeline with cyan numbered circles + dashed connector
-6. **Projects Preview** — 3-col grid using uploaded photos, hover overlays, "Смотреть все" → `/projects`
-7. **Testimonials** — 3 cards, gold stars, cyan quote marks
-8. **CTA Form Section** — Navy→cyan diagonal gradient, contact form (Имя, Телефон, Тип объекта dropdown, Сообщение) with Zod validation, submits to a server function that logs the lead (no DB needed unless requested)
+### Layout order on desktop (unchanged)
+```text
+[RU|KG]  [📞 +996 707 148 555]
+```
 
-## Projects Page
-- Use the 9 uploaded photos categorized: pools (outdoor/indoor/private), hammam (2), sauna (1), small pool builds
-- Tab filter, masonry/3-col grid, hover overlay with project name
-
-## Assets
-- Copy uploaded logo + 9 pool/hammam/sauna images to `src/assets/`
-- Use them as both gallery content AND `og:image` on relevant routes
-
-## Tech
-- TanStack Start file-based routes
-- Tailwind v4 with custom theme tokens for brand colors
-- Framer Motion for fade-in/scroll animations
-- React Hook Form + Zod for the lead form
-- Lucide icons + custom inline SVG waves
-- Fully responsive, mobile hamburger menu, touch targets ≥ 44px
-
-## Form Handling
-Lead form posts to a TanStack server function that validates with Zod and (for now) logs the submission + returns success. Easy to wire to email/DB later.
+No other files need changes.
