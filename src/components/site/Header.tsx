@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link, useLocation } from "@tanstack/react-router";
 import { Menu, X, Phone } from "lucide-react";
 import { useI18n, type Lang } from "@/lib/i18n";
-import logo from "@/assets/logo.png"; // Updated with new logo file
+import logo from "@/assets/logo-v2.png";
 
 const PHONE_DISPLAY = "+996 707 148 555";
 const PHONE_TEL = "+996707148555";
