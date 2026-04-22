@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Instagram, Phone, MessageCircle, MapPin } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { WaveDivider } from "./WaveDivider";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-v2.png";
 
 const PHONE_DISPLAY = "+996 707 148 555";
 const PHONE_TEL = "+996707148555";
