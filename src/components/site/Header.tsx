@@ -71,6 +71,20 @@ export function Header() {
               </button>
             ))}
           </div>
+          <div className="flex items-center rounded-full border border-border bg-white p-0.5 text-[11px] font-bold md:hidden">
+            {(["ru", "kg"] as Lang[]).map((l) => (
+              <button
+                key={l}
+                type="button"
+                onClick={() => setLang(l)}
+                className={`min-h-[36px] min-w-[32px] rounded-full px-2 py-1 uppercase transition-colors ${lang === l ? "bg-navy text-white" : "text-navy/70"}`}
+                aria-pressed={lang === l}
+                aria-label={`switch language to ${l}`}
+              >
+                {l}
+              </button>
+            ))}
+          </div>
           <a
             href={`tel:${PHONE_TEL}`}
             className="hidden min-h-[44px] items-center gap-2 rounded-full bg-cyan px-4 py-2 text-sm font-bold text-white shadow transition-all hover:shadow-[var(--shadow-glow)] sm:inline-flex"
@@ -106,18 +120,6 @@ export function Header() {
                 {l.label}
               </Link>
             ))}
-            <div className="mt-2 flex items-center gap-2 px-3 py-2">
-              {(["ru", "kg"] as Lang[]).map((l) => (
-                <button
-                  key={l}
-                  type="button"
-                  onClick={() => setLang(l)}
-                  className={`min-h-[40px] rounded-full px-4 py-1 text-sm font-bold uppercase transition-colors ${lang === l ? "bg-navy text-white" : "border border-border text-navy/70"}`}
-                >
-                  {l}
-                </button>
-              ))}
-            </div>
           </nav>
         </div>
       )}
