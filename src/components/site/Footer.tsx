@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { Instagram, Phone, MessageCircle, MapPin } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { WaveDivider } from "./WaveDivider";
-import logo from "@/assets/logo-v2.png";
 
 const PHONE_DISPLAY = "+996 707 148 555";
 const PHONE_TEL = "+996707148555";
@@ -18,7 +17,6 @@ export function Footer() {
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-3 md:px-6">
           <div>
             <div className="flex items-center gap-3">
-              <img src={logo} alt="AQUA BRABUS KG" className="h-12 w-auto brightness-0 invert" />
               <span className="text-lg font-extrabold tracking-tight">AQUA BRABUS KG</span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-white/70">{t("footer.desc")}</p>
