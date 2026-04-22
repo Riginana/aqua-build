@@ -38,6 +38,13 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 pb-32 pt-20 md:px-6 md:pb-40 md:pt-32">
+        <motion.div
+          initial="hidden" animate="show" variants={fadeUp}
+          className="mb-5 inline-flex items-center gap-2 rounded-full border border-gold/50 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-wider text-gold backdrop-blur md:text-sm"
+        >
+          <Trophy className="h-4 w-4" />
+          <span>{t("badge.leader2025")}</span>
+        </motion.div>
         <motion.h1
           initial="hidden" animate="show" variants={fadeUp}
           className="max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-white md:text-6xl"
@@ -77,10 +84,11 @@ export function TrustBar() {
     { icon: Trophy, label: t("trust.objects") },
     { icon: MapPin, label: t("trust.geo") },
     { icon: ShieldCheck, label: t("trust.warranty") },
+    { icon: Trophy, label: t("trust.leader") },
   ];
   return (
     <section className="bg-navy text-white">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 py-8 md:grid-cols-4 md:px-6">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 py-8 md:grid-cols-5 md:px-6">
         {items.map(({ icon: Icon, label }, i) => (
           <div key={i} className="flex items-center gap-3">
             <Icon className="h-6 w-6 shrink-0 text-cyan" />
