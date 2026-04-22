@@ -35,12 +35,6 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:h-20 md:px-6">
         <Link to="/" className="flex items-center gap-3">
           <img src={logo} alt="AQUA BRABUS KG" className="h-10 w-auto md:h-12" />
-          <span className="hidden flex-col leading-tight sm:flex">
-            <span className="text-base font-extrabold tracking-tight text-navy md:text-lg">AQUA BRABUS KG</span>
-            <span className="text-[10px] font-semibold uppercase tracking-wider text-navy/70">
-              {lang === "ru" ? "Профессиональное строительство бассейнов" : "Бассейн куруу боюнча профессионалдар"}
-            </span>
-          </span>
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
