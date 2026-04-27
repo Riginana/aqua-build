@@ -50,7 +50,15 @@ export function Footer() {
               <li><a href={`tel:${PHONE_TEL}`} className="inline-flex items-center gap-2 text-white/90 hover:text-cyan"><Phone className="h-4 w-4" /> {PHONE_DISPLAY}</a></li>
               <li><a href={`https://wa.me/${PHONE_TEL.replace("+", "")}`} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-2 text-white/90 hover:text-cyan"><MessageCircle className="h-4 w-4" /> WhatsApp</a></li>
               <li><a href="https://instagram.com/aqua_brabus_kg" target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-2 text-white/90 hover:text-cyan"><Instagram className="h-4 w-4" /> Instagram</a></li>
-              <li className="inline-flex items-center gap-2 text-white/80"><MapPin className="h-4 w-4" /> {t("footer.address")}</li>
+              <li>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Таалай 7, Киргизия 1, Бишкек, Кыргызстан")}`}
+                  target="_blank" rel="noreferrer noopener"
+                  className="inline-flex items-start gap-2 text-white/90 hover:text-cyan"
+                >
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0" /> <span>{t("footer.address")}</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
