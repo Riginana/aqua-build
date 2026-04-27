@@ -6,12 +6,15 @@ import { useI18n } from "@/lib/i18n";
 
 const PHONE_DISPLAY = "+996 707 148 555";
 const PHONE_TEL = "+996707148555";
+const MAP_QUERY = "Таалай 7, Киргизия 1, Бишкек, Кыргызстан";
+const MAP_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_QUERY)}`;
+const MAP_EMBED = `https://www.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&output=embed`;
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Контакты — AQUA BRABUS KG | Бишкек, Кыргызстан" },
-      { name: "description", content: "Свяжитесь с AQUA BRABUS KG: телефон +996 707 148 555, WhatsApp, Instagram. Бесплатная консультация и выезд на объект." },
+      { name: "description", content: "Контакты AQUA BRABUS KG: ул. Таалай 7, мкр. Киргизия 1, Бишкек. Телефон +996 707 148 555, WhatsApp, Instagram. Бесплатная консультация и выезд на объект." },
       { property: "og:title", content: "Контакты AQUA BRABUS KG" },
       { property: "og:description", content: "Звоните, пишите в WhatsApp или Instagram — ответим в течение дня." },
     ],
@@ -25,7 +28,7 @@ function ContactPage() {
     { icon: Phone, label: t("contact.phone"), value: PHONE_DISPLAY, href: `tel:${PHONE_TEL}` },
     { icon: MessageCircle, label: t("contact.whatsapp"), value: PHONE_DISPLAY, href: `https://wa.me/${PHONE_TEL.replace("+", "")}` },
     { icon: Instagram, label: t("contact.instagram"), value: "@aqua_brabus_kg", href: "https://instagram.com/aqua_brabus_kg" },
-    { icon: MapPin, label: t("contact.address"), value: t("footer.address"), href: null },
+    { icon: MapPin, label: t("contact.address"), value: t("footer.address"), href: MAP_LINK },
   ];
   return (
     <SiteLayout>
@@ -69,6 +72,23 @@ function ContactPage() {
                 <LeadForm variant="light" />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-background pb-20 md:pb-28">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <h2 className="text-2xl font-extrabold text-navy md:text-3xl">{t("contact.mapTitle")}</h2>
+          <p className="mt-2 text-sm text-muted-foreground">{t("footer.address")}</p>
+          <div className="mt-6 overflow-hidden rounded-3xl border border-border shadow-[var(--shadow-card)]">
+            <iframe
+              src={MAP_EMBED}
+              title={t("contact.mapTitle")}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+              className="block h-[400px] w-full md:h-[500px]"
+            />
           </div>
         </div>
       </section>
