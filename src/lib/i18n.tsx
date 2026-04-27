@@ -93,7 +93,7 @@ const ru: Dict = {
   "footer.desc": "Профессиональное строительство бассейнов, хамамов, саун и фонтанов под ключ по всему Кыргызстану.",
   "footer.nav": "Навигация",
   "footer.contacts": "Контакты",
-  "footer.address": "Бишкек, Кыргызстан",
+  "footer.address": "Ул. Таалай 7, мкр. Киргизия 1, Бишкек",
   "footer.rights": "Все права защищены.",
 
   "about.title": "О компании",
@@ -113,6 +113,7 @@ const ru: Dict = {
   "contact.whatsapp": "WhatsApp",
   "contact.instagram": "Instagram",
   "contact.address": "Адрес",
+  "contact.mapTitle": "Мы на карте",
 };
 
 const kg: Dict = {
@@ -204,7 +205,7 @@ const kg: Dict = {
   "footer.desc": "Бүткүл Кыргызстан боюнча бассейн, хамам, сауна жана фонтан куруу боюнча профессионалдар.",
   "footer.nav": "Навигация",
   "footer.contacts": "Байланыш",
-  "footer.address": "Бишкек, Кыргызстан",
+  "footer.address": "Таалай көч. 7, Кыргызстан 1 кичи району, Бишкек",
   "footer.rights": "Бардык укуктар корголгон.",
 
   "about.title": "Компания жөнүндө",
@@ -224,6 +225,7 @@ const kg: Dict = {
   "contact.whatsapp": "WhatsApp",
   "contact.instagram": "Instagram",
   "contact.address": "Дарек",
+  "contact.mapTitle": "Картадагы биз",
 };
 
 const dicts: Record<Lang, Dict> = { ru, kg };
