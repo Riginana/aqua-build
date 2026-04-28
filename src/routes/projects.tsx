@@ -5,7 +5,7 @@ import { SiteLayout } from "@/components/site/Layout";
 import { CtaForm } from "@/components/site/sections";
 import { projects, type Category } from "@/components/site/projects-data";
 import { useI18n } from "@/lib/i18n";
-import { MapPin, Clock, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { MapPin, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -225,10 +225,6 @@ function ProjectsPage() {
                   <div className="flex items-center gap-2 text-sm text-navy/80">
                     <MapPin className="h-4 w-4 shrink-0 text-cyan" />
                     {lang === "ru" ? current.locationRu : current.locationKg}
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-navy/80">
-                    <Clock className="h-4 w-4 shrink-0 text-cyan" />
-                    Срок: {current.term}
                   </div>
                 </div>
 
