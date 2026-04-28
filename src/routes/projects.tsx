@@ -212,7 +212,7 @@ function ProjectsPage() {
                 </div>
 
                 <div className="mt-auto pt-4">
-                  
+                  <a
                     href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
                       `Здравствуйте! Хочу узнать подробнее о проекте:\n*${lang === "ru" ? current.titleRu : current.titleKg}*\n(${lang === "ru" ? current.locationRu : current.locationKg})\n\nМоё имя:\nМой телефон:`
                     )}`}
