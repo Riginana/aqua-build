@@ -33,6 +33,7 @@ function ProjectsPage() {
   const { t, lang } = useI18n();
   const [active, setActive] = React.useState<"all" | Category>("all");
   const [lightboxIdx, setLightboxIdx] = React.useState<number | null>(null);
+  const [photoIdx, setPhotoIdx] = React.useState(0);
 
   const filtered = active === "all" ? projects : projects.filter((p) => p.category === active);
 
@@ -54,7 +55,12 @@ function ProjectsPage() {
     return () => { document.body.style.overflow = ""; };
   }, [lightboxIdx]);
 
+  // Сброс индекса фото при смене карточки
+  React.useEffect(() => { setPhotoIdx(0); }, [lightboxIdx]);
+
   const current = lightboxIdx !== null ? filtered[lightboxIdx] : null;
+  const currentImages = current ? (current.images ?? [current.src]) : [];
+  const currentPhoto = current ? (currentImages[photoIdx] ?? current.src) : "";
 
   return (
     <SiteLayout>
@@ -113,6 +119,11 @@ function ProjectsPage() {
                     <span className="absolute right-3 top-3 rounded-full bg-white/15 px-3 py-1 text-xs font-bold text-white backdrop-blur">
                       {p.year}
                     </span>
+                    {p.images && p.images.length > 1 && (
+                      <span className="absolute left-3 top-3 rounded-full bg-cyan/90 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white backdrop-blur">
+                        {p.images.length} фото
+                      </span>
+                    )}
                   </div>
 
                   {/* Контент */}
@@ -162,10 +173,24 @@ function ProjectsPage() {
               {/* Фото */}
               <div className="relative md:w-1/2">
                 <img
-                  src={current.src}
+                  src={currentPhoto}
                   alt={lang === "ru" ? current.titleRu : current.titleKg}
                   className="h-64 w-full object-cover md:h-full"
                 />
+                {currentImages.length > 1 && (
+                  <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5">
+                    {currentImages.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={(e) => { e.stopPropagation(); setPhotoIdx(idx); }}
+                        className={`h-2 rounded-full transition-all ${
+                          idx === photoIdx ? "w-6 bg-white" : "w-2 bg-white/50 hover:bg-white/80"
+                        }`}
+                        aria-label={`Фото ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
+                )}
                 {/* Навигация */}
                 {lightboxIdx > 0 && (
                   <button
