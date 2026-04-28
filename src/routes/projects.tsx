@@ -139,10 +139,6 @@ function ProjectsPage() {
                         <MapPin className="h-3.5 w-3.5 text-cyan" />
                         {lang === "ru" ? p.locationRu : p.locationKg}
                       </span>
-                      <span className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground">
-                        <Clock className="h-3.5 w-3.5 text-cyan" />
-                        {p.term}
-                      </span>
                     </div>
                   </div>
                 </motion.div>
