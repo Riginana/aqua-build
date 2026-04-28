@@ -117,7 +117,7 @@ function ServicesPage() {
                       <span className="font-bold text-navy">{s.term}</span>
                     </div>
                   </div>
-                  
+                  <a
                     href={whatsappUrl}
                     target="_blank"
                     rel="noreferrer noopener"
