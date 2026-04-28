@@ -117,7 +117,7 @@ function ServicesPage() {
                     <span className="font-bold text-navy">{s.term}</span>
                   </div>
                 </div>
-                
+                <a
                   href="/contact"
                   className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-cyan px-6 text-sm font-bold text-white shadow transition-all hover:shadow-[var(--shadow-glow)]"
                 >
