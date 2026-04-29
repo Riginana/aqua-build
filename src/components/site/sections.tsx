@@ -112,13 +112,13 @@ const SERVICES = [
 export function Services({ withCta = true }: { withCta?: boolean }) {
   const { t } = useI18n();
   return (
-    <section className="bg-background py-20 md:py-28">
+    <section className="bg-background py-12 md:py-28">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="text-center">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-cyan">{t("services.kicker")}</p>
-          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-navy md:text-5xl">{t("services.title")}</h2>
+          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-navy md:text-5xl">{t("services.title")}</h2>
         </div>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-6 md:mt-12 lg:grid-cols-3">
           {SERVICES.map((s, i) => (
             <motion.div
               key={s.key}
@@ -126,16 +126,16 @@ export function Services({ withCta = true }: { withCta?: boolean }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-white p-7 shadow-[var(--shadow-card)] transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-glow)]"
+              className="group relative overflow-hidden rounded-2xl border border-border bg-white p-4 shadow-[var(--shadow-card)] transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-glow)] md:p-7"
             >
               <span className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-cyan to-teal" />
               <div className="text-cyan">
-                <ServiceIcon name={s.icon} className="h-12 w-12" />
+                <ServiceIcon name={s.icon} className="h-9 w-9 md:h-12 md:w-12" />
               </div>
-              <h3 className="mt-5 text-xl font-bold text-navy">{t(`services.${s.key}.title`)}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(`services.${s.key}.desc`)}</p>
+              <h3 className="mt-3 text-base font-bold text-navy md:mt-5 md:text-xl">{t(`services.${s.key}.title`)}</h3>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground md:mt-2 md:text-sm">{t(`services.${s.key}.desc`)}</p>
               {withCta && (
-                <Link to="/services" className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-teal hover:text-cyan">
+                <Link to="/services" className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-teal hover:text-cyan md:mt-5 md:text-sm">
                   {t("cta.more")} →
                 </Link>
               )}
