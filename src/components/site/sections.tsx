@@ -6,7 +6,7 @@ import { ServiceIcon } from "./ServiceIcon";
 import { WaveDivider } from "./WaveDivider";
 import { projects } from "./projects-data";
 import { LeadForm } from "./LeadForm";
-import heroBg from "@/assets/pool-2.jpeg";
+import heroBg from "@/assets/hero-pool.jpg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
