@@ -53,7 +53,7 @@ export function Hero() {
         </motion.h1>
         <motion.p
           initial="hidden" animate="show" variants={{ ...fadeUp, show: { ...fadeUp.show, transition: { ...fadeUp.show.transition, delay: 0.1 } } }}
-          className="mt-5 max-w-2xl text-base text-white/90 md:text-lg"
+          className="mt-5 max-w-2xl text-base text-white/90 md:text-lg whitespace-pre-line"
         >
           {t("hero.sub")}
         </motion.p>
