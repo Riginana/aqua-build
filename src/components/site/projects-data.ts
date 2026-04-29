@@ -196,7 +196,7 @@ export const projects: Project[] = [
   },
   {
     id: "p4",
-    src: p4,
+    src: w3,
     category: "pools",
     titleRu: "Спортивный бассейн",
     titleKg: "Спорттук бассейн",
@@ -248,7 +248,7 @@ export const projects: Project[] = [
   },
   {
     id: "w3",
-    src: w3,
+    src: p4,
     category: "hammam",
     titleRu: "Хамам с восточным узором",
     titleKg: "Чыгыш оюусу менен хамам",
