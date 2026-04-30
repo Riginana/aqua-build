@@ -87,7 +87,7 @@ export function TrustBar() {
   ];
   return (
     <section className="bg-navy text-white">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 py-8 md:grid-cols-5 md:px-6">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 py-8 md:grid-cols-4 md:px-6">
         {items.map(({ icon: Icon, label }, i) => (
           <div key={i} className="flex items-center gap-3">
             <Icon className="h-6 w-6 shrink-0 text-cyan" />
