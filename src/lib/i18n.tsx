@@ -23,7 +23,7 @@ const ru: Dict = {
   "trust.objects": "100+ завершённых объектов",
   "trust.geo": "Работаем по всему Кыргызстану",
   "trust.warranty": "Гарантия 5 лет",
-  "trust.leader": "Лидер отрасли 2025",
+   "trust.leader": "🏆 Лауреат The Great Awards 2025",
   "badge.leader2025": "✓ Лидер рынка Кыргызстана",
   "badge.leader2025.short": "Лидер 2025",
 
