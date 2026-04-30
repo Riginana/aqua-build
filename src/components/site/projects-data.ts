@@ -40,7 +40,7 @@ export const projects: Project[] = [
   {
     id: "r1",
     src: r1New,
-    images: [r1New, r1, r2],
+    images: [r1New],
     category: "pools",
     titleRu: "Бассейн с гидромассажем",
     titleKg: "Гидромассаж бассейн",
