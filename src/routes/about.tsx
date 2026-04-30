@@ -4,6 +4,8 @@ import { SiteLayout } from "@/components/site/Layout";
 import { CtaForm, TrustBar } from "@/components/site/sections";
 import { useI18n } from "@/lib/i18n";
 import about from "@/assets/pool-3.jpeg";
+import awardStatue from "@/assets/award-statue.png";
+import awardDiploma from "@/assets/award-diploma.png";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -55,6 +57,27 @@ function AboutPage() {
           </div>
           <div className="overflow-hidden rounded-3xl shadow-[var(--shadow-card)]">
             <img src={about} alt="AQUA BRABUS KG" className="h-full w-full object-cover" />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-light-gray py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-2 text-xs font-bold uppercase tracking-wider text-navy md:text-sm">
+              <Trophy className="h-4 w-4 text-gold" />
+              <span>The Great Awards 2025</span>
+            </div>
+            <h2 className="text-3xl font-extrabold tracking-tight text-navy md:text-5xl">{t("about.award.title")}</h2>
+            <p className="mx-auto mt-5 text-base leading-relaxed text-navy/90 md:text-lg">{t("about.award.text")}</p>
+          </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            <div className="overflow-hidden rounded-3xl shadow-[var(--shadow-card)]">
+              <img src={awardStatue} alt={t("about.award.statue")} className="aspect-[4/5] h-full w-full object-cover" loading="lazy" />
+            </div>
+            <div className="overflow-hidden rounded-3xl shadow-[var(--shadow-card)]">
+              <img src={awardDiploma} alt={t("about.award.diploma")} className="aspect-[4/5] h-full w-full object-cover" loading="lazy" />
+            </div>
           </div>
         </div>
       </section>
