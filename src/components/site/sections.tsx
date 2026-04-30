@@ -81,7 +81,6 @@ export function TrustBar() {
   const { t } = useI18n();
   const items = [
     { icon: Award, label: t("trust.experience") },
-    { icon: Trophy, label: t("trust.objects") },
     { icon: MapPin, label: t("trust.geo") },
     { icon: ShieldCheck, label: t("trust.warranty") },
     { icon: Trophy, label: t("trust.leader") },
