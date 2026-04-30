@@ -9,6 +9,7 @@ import w3 from "@/assets/work-3.jpeg";
 import w4 from "@/assets/work-4.jpeg";
 import r1 from "@/assets/real-1.png";
 import r2 from "@/assets/real-2.png";
+import r1New from "@/assets/real-1-new.png";
 import r3 from "@/assets/real-3.png";
 import r4 from "@/assets/real-4.png";
 import r5 from "@/assets/real-5.png";
@@ -38,8 +39,8 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: "r1",
-    src: r1,
-    images: [r1, r2],
+    src: r1New,
+    images: [r1New, r1, r2],
     category: "pools",
     titleRu: "Бассейн с гидромассажем",
     titleKg: "Гидромассаж бассейн",
