@@ -216,10 +216,10 @@ export function ProjectsPreview() {
   const { t, lang } = useI18n();
   const list = projects.slice(0, 6);
   return (
-    <section className="bg-background py-20 md:py-28">
+    <section className="bg-background py-12 md:py-28">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
-        <h2 className="text-center text-3xl font-extrabold tracking-tight text-navy md:text-5xl">{t("projects.title")}</h2>
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <h2 className="text-center text-2xl font-extrabold tracking-tight text-navy md:text-5xl">{t("projects.title")}</h2>
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 md:mt-12 lg:grid-cols-3">
           {list.map((p, i) => (
             <motion.div
               key={p.id}
@@ -231,8 +231,8 @@ export function ProjectsPreview() {
             >
               <img src={p.src} alt={lang === "ru" ? p.titleRu : p.titleKg} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy/30 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-              <div className="absolute inset-x-0 bottom-0 translate-y-2 p-5 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                <p className="text-lg font-bold text-white">{lang === "ru" ? p.titleRu : p.titleKg}</p>
+              <div className="absolute inset-x-0 bottom-0 translate-y-2 p-3 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100 md:p-5">
+                <p className="text-xs font-bold text-white md:text-lg">{lang === "ru" ? p.titleRu : p.titleKg}</p>
               </div>
             </motion.div>
           ))}
