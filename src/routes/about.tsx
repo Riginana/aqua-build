@@ -50,25 +50,34 @@ function AboutPage() {
 
       {/* О компании */}
       <section className="bg-background py-20 md:py-28">
-        <div className="mx-auto grid max-w-7xl gap-12 px-4 md:grid-cols-2 md:px-6">
-          <div>
-            <p className="text-base leading-relaxed text-navy/90">{t("about.p1")}</p>
-            <p className="mt-5 text-base leading-relaxed text-navy/90">{t("about.p2")}</p>
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <div className="grid gap-12 md:grid-cols-2">
+            <div>
+              <p className="text-base leading-relaxed text-navy/90">{t("about.p1")}</p>
+              <p className="mt-5 text-base leading-relaxed text-navy/90">{t("about.p2")}</p>
 
-            <h2 className="mt-10 text-2xl font-extrabold text-navy">{t("about.values")}</h2>
-            <ul className="mt-5 space-y-3">
-              {values.map((k) => (
-                <li key={k} className="flex items-start gap-3">
-                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan/15 text-cyan">
-                    <Check className="h-4 w-4" />
-                  </span>
-                  <span className="text-base font-semibold text-navy">{t(k)}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="overflow-hidden rounded-3xl shadow-[var(--shadow-card)]">
-            <img src={about} alt="AQUA BRABUS KG" className="h-full w-full object-cover" />
+              <h2 className="mt-10 text-2xl font-extrabold text-navy">{t("about.values")}</h2>
+              <ul className="mt-5 space-y-3">
+                {values.map((k) => (
+                  <li key={k} className="flex items-start gap-3">
+                    <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan/15 text-cyan">
+                      <Check className="h-4 w-4" />
+                    </span>
+                    <span className="text-base font-semibold text-navy">{t(k)}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Два фото: бассейн + офис */}
+            <div className="flex flex-col gap-5">
+              <div className="overflow-hidden rounded-3xl shadow-[var(--shadow-card)]">
+                <img src={about} alt="Проект AQUA BRABUS KG" className="h-64 w-full object-cover md:h-72" />
+              </div>
+              <div className="overflow-hidden rounded-3xl shadow-[var(--shadow-card)]">
+                <img src={office} alt="Офис AQUA BRABUS KG — Бишкек" className="h-64 w-full object-cover md:h-72" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
