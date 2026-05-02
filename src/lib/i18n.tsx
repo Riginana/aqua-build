@@ -124,6 +124,8 @@ const ru: Dict = {
     "В 2025 году AQUA BRABUS KG удостоена высшей отраслевой награды Кыргызстана — диплома и хрустальной статуэтки The Great Awards of the Year в номинации «Лидер в строительстве водных и банных комплексов». Награда подтверждает безупречное качество и вклад в развитие отрасли.",
   "about.award.statue": "Хрустальная статуэтка The Great Awards 2025",
   "about.award.diploma": "Диплом The Great Awards 2025",
+  "about.award.badge.leader": "🥇 Лидер в строительстве водных и банных комплексов",
+  "about.award.badge.country": "📍 Кыргызстан, 2025",
 
   "contact.title": "Свяжитесь с нами",
   "contact.sub": "Мы на связи каждый день. Звоните, пишите в WhatsApp или Instagram.",
@@ -254,6 +256,8 @@ const kg: Dict = {
     "2025-жылы AQUA BRABUS KG Кыргызстандын тармактык эң жогорку сыйлыгына — «Суу жана мончо комплекстерин курууда лидер» номинациясында The Great Awards of the Year дипломуна жана хрусталь статуэткасына татыктуу болду. Сыйлык кынтыксыз сапатты жана тармактын өнүгүүсүнө кошкон салымды тастыктайт.",
   "about.award.statue": "The Great Awards 2025 хрусталь статуэткасы",
   "about.award.diploma": "The Great Awards 2025 дипломы",
+  "about.award.badge.leader": "🥇 Суу жана мончо комплекстерин курууда лидер",
+  "about.award.badge.country": "📍 Кыргызстан, 2025",
 
   "contact.title": "Биз менен байланышыңыз",
   "contact.sub": "Күн сайын байланыштабыз. Чалыңыз, WhatsApp же Instagram'га жазыңыз.",
