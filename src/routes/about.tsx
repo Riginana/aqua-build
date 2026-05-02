@@ -4,8 +4,9 @@ import { SiteLayout } from "@/components/site/Layout";
 import { CtaForm, TrustBar } from "@/components/site/sections";
 import { useI18n } from "@/lib/i18n";
 import about from "@/assets/pool-3.jpeg";
-import award1 from "@/assets/award-diploma.png";
-import award2 from "@/assets/award-statue.png";
+import office from "@/assets/office.jpeg";
+import award1 from "@/assets/award-1.jpeg";
+import award2 from "@/assets/award-2.jpeg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
