@@ -290,6 +290,21 @@ export function Testimonials() {
                 {/* Автор */}
                 <div className="mt-5 flex items-center gap-3 border-t border-border pt-4">
                   <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${avatarColors[idx]} text-sm font-extrabold text-white`}>
+                    {initials(name)}
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold text-navy">{name}</div>
+                    <div className="text-xs text-navy/60">{t(`reviews.${i}.role`)}</div>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export function CtaForm() {
   const { t } = useI18n();

@@ -10,7 +10,7 @@ const ru: Dict = {
   "nav.projects": "Проекты",
   "nav.about": "О нас",
   "nav.contact": "Контакты",
-  "cta.consult": "Получить консультацию",
+   "cta.consult": "Консультация",
   "cta.projects": "Смотреть проекты",
   "cta.viewAll": "Смотреть все проекты",
   "cta.more": "Подробнее",

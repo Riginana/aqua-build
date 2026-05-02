@@ -13,7 +13,7 @@ const LANG_OPTIONS: { value: Lang; flag: string; label: string }[] = [
 ];
 
 export function Header() {
-  const { t, lang, setLang } = useI18n();
+   const { t, lang, setLang } = useI18n();
   const [scrolled, setScrolled] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const location = useLocation();
@@ -99,8 +99,8 @@ export function Header() {
             href={`tel:${PHONE_TEL}`}
             className="hidden min-h-[44px] items-center gap-2 rounded-full bg-cyan px-4 py-2 text-sm font-bold text-white shadow transition-all hover:shadow-[var(--shadow-glow)] sm:inline-flex"
           >
-            <Phone className="h-4 w-4" />
-            <span>{PHONE_DISPLAY}</span>
+             <Phone className="h-4 w-4 shrink-0" />
+             <span className="truncate">{t("cta.consult")}</span>
           </a>
           <button
             type="button"
