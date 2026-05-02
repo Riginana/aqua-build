@@ -249,36 +249,47 @@ export function ProjectsPreview() {
 export function Testimonials() {
   const { t } = useI18n();
   const items = [1, 2, 3] as const;
+
+  const avatarColors = ["bg-cyan", "bg-teal", "bg-navy"];
+
+  const initials = (name: string) =>
+    name.replace(/[^a-zA-Zа-яА-Я]/g, "").slice(0, 2).toUpperCase();
+
   return (
     <section className="bg-light-gray py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
-        <h2 className="text-center text-3xl font-extrabold tracking-tight text-navy md:text-5xl">{t("reviews.title")}</h2>
+        <h2 className="text-center text-3xl font-extrabold tracking-tight text-navy md:text-5xl">
+          {t("reviews.title")}
+        </h2>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {items.map((i, idx) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.5, delay: idx * 0.06 }}
-              className="relative rounded-2xl bg-white p-7 shadow-[var(--shadow-card)]"
-            >
-              <Quote className="absolute right-5 top-5 h-8 w-8 text-cyan/20" />
-              <div className="flex gap-0.5 text-gold">
-                {Array.from({ length: 5 }).map((_, s) => <Star key={s} className="h-4 w-4 fill-current" />)}
-              </div>
-              <p className="mt-4 text-sm leading-relaxed text-navy/90">«{t(`reviews.${i}.text`)}»</p>
-              <div className="mt-5 border-t border-border pt-4">
-                <p className="text-sm font-bold text-navy">{t(`reviews.${i}.name`)}</p>
-                <p className="text-xs text-muted-foreground">{t(`reviews.${i}.role`)}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+          {items.map((i, idx) => {
+            const name = t(`reviews.${i}.name`);
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.5, delay: idx * 0.06 }}
+                className="relative flex flex-col rounded-2xl bg-white p-7 shadow-[var(--shadow-card)]"
+              >
+                <Quote className="absolute right-5 top-5 h-8 w-8 text-cyan/15" />
+
+                {/* Звёзды */}
+                <div className="flex gap-0.5 text-gold">
+                  {Array.from({ length: 5 }).map((_, s) => (
+                    <Star key={s} className="h-4 w-4 fill-current" />
+                  ))}
+                </div>
+
+                {/* Текст */}
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-navy/80">
+                  «{t(`reviews.${i}.text`)}»
+                </p>
+
+                {/* Автор */}
+                <div className="mt-5 flex items-center gap-3 border-t border-border pt-4">
+                  <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${avatarColors[idx]} text-sm font-extrabold text-white`}>
 
 export function CtaForm() {
   const { t } = useI18n();
