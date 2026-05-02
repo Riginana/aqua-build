@@ -39,7 +39,7 @@ export function Header() {
 
   return (
     <header className={`sticky top-0 z-50 w-full bg-white transition-shadow ${scrolled ? "shadow-md" : "shadow-sm"}`}>
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:h-20 md:px-6">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 md:h-24 md:px-6">
         <Link to="/" className="flex items-center gap-3">
           <img src={logo} alt="AQUA BRABUS KG" className="h-14 w-auto md:h-18" />
         </Link>
