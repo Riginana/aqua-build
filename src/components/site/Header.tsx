@@ -25,9 +25,7 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  React.useEffect(() => {
-    setOpen(false);
-  }, [location.pathname]);
+  React.useEffect(() => { setOpen(false); }, [location.pathname]);
 
   const links = [
     { to: "/", label: t("nav.home") },
@@ -39,9 +37,9 @@ export function Header() {
 
   return (
     <header className={`sticky top-0 z-50 w-full bg-white transition-shadow ${scrolled ? "shadow-md" : "shadow-sm"}`}>
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 md:h-18 md:h-22">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:h-20 md:px-6">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="AQUA BRABUS KG" className="h-16 w-auto md:h-20" />
+          <img src={logo} alt="AQUA BRABUS KG" className="h-10 w-auto md:h-12" />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
@@ -97,7 +95,7 @@ export function Header() {
             ))}
           </div>
 
-          <a
+          
             href={`tel:${PHONE_TEL}`}
             className="hidden min-h-[44px] items-center gap-2 rounded-full bg-cyan px-4 py-2 text-sm font-bold text-white shadow transition-all hover:shadow-[var(--shadow-glow)] sm:inline-flex"
           >
@@ -123,9 +121,7 @@ export function Header() {
                 key={l.to}
                 to={l.to}
                 className="min-h-[44px] rounded-md px-3 py-3 text-base font-semibold text-navy hover:bg-light-gray"
-                activeProps={{
-                  className: "min-h-[44px] rounded-md px-3 py-3 text-base font-bold text-cyan bg-light-gray",
-                }}
+                activeProps={{ className: "min-h-[44px] rounded-md px-3 py-3 text-base font-bold text-cyan bg-light-gray" }}
                 activeOptions={{ exact: l.to === "/" }}
               >
                 {l.label}
