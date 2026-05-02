@@ -90,26 +90,23 @@ function AboutPage() {
               🏆 The Great Awards of the Year
             </span>
             <h2 className="text-3xl font-extrabold tracking-tight text-white md:text-5xl">
-              Признание на национальном уровне
+              {t("about.award.title")}
             </h2>
-            <p className="max-w-2xl text-base text-white/75">
-              В 2025 году AQUA BRABUS KG удостоена диплома и хрустального кубка за безупречное лидерство, высокий
-              уровень качества и значимый вклад в развитие отрасли.
-            </p>
+            <p className="max-w-2xl text-base text-white/75">{t("about.award.text")}</p>
           </div>
 
           <div className="mx-auto mt-12 grid max-w-3xl gap-6 sm:grid-cols-2">
             <div className="group overflow-hidden rounded-3xl shadow-2xl">
               <img
                 src={award1}
-                alt="Диплом Лидер в строительстве водных и банных комплексов 2025"
+                alt={t("about.award.diploma")}
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
             <div className="group overflow-hidden rounded-3xl shadow-2xl">
               <img
                 src={award2}
-                alt="Кубок The Great Awards of the Year — AQUA BRABUS KG, Kyrgyzstan 2025"
+                alt={t("about.award.statue")}
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
@@ -117,10 +114,10 @@ function AboutPage() {
 
           <div className="mt-10 flex flex-wrap justify-center gap-4 text-sm">
             <div className="flex items-center gap-2 rounded-full bg-white/10 px-5 py-3 font-semibold text-white">
-              🥇 Лидер в строительстве водных и банных комплексов
+              {t("about.award.badge.leader")}
             </div>
             <div className="flex items-center gap-2 rounded-full bg-white/10 px-5 py-3 font-semibold text-white">
-              📍 Кыргызстан, 2025
+              {t("about.award.badge.country")}
             </div>
             <div className="flex items-center gap-2 rounded-full bg-white/10 px-5 py-3 font-semibold text-white">
               🏢 ND Production
