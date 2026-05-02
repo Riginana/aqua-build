@@ -7,6 +7,11 @@ import logo from "@/assets/logo-v2.png";
 const PHONE_DISPLAY = "+996 707 148 555";
 const PHONE_TEL = "+996707148555";
 
+const LANG_OPTIONS: { value: Lang; flag: string; label: string }[] = [
+  { value: "ru", flag: "🇷🇺", label: "RU" },
+  { value: "kg", flag: "🇰🇬", label: "KG" },
+];
+
 export function Header() {
   const { t, lang, setLang } = useI18n();
   const [scrolled, setScrolled] = React.useState(false);
@@ -32,9 +37,9 @@ export function Header() {
 
   return (
     <header className={`sticky top-0 z-50 w-full bg-white transition-shadow ${scrolled ? "shadow-md" : "shadow-sm"}`}>
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 md:h-24 md:px-6">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:h-20 md:px-6">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="AQUA BRABUS KG" className="h-14 w-auto md:h-20" />
+          <img src={logo} alt="AQUA BRABUS KG" className="h-10 w-auto md:h-12" />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
@@ -52,34 +57,45 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2 md:gap-3">
+          {/* Переключатель языка — десктоп */}
           <div className="hidden items-center rounded-full border border-border bg-white p-0.5 text-xs font-bold md:flex">
-            {(["ru", "kg"] as Lang[]).map((l) => (
+            {LANG_OPTIONS.map((opt) => (
               <button
-                key={l}
+                key={opt.value}
                 type="button"
-                onClick={() => setLang(l)}
-                className={`min-h-[32px] rounded-full px-3 py-1 uppercase transition-colors ${lang === l ? "bg-navy text-white" : "text-navy/70 hover:text-navy"}`}
-                aria-pressed={lang === l}
+                onClick={() => setLang(opt.value)}
+                className={`flex min-h-[32px] items-center gap-1.5 rounded-full px-3 py-1 transition-colors ${
+                  lang === opt.value ? "bg-navy text-white" : "text-navy/70 hover:text-navy"
+                }`}
+                aria-pressed={lang === opt.value}
+                aria-label={`Переключить язык на ${opt.label}`}
               >
-                {l}
+                <span className="text-base leading-none">{opt.flag}</span>
+                <span className="uppercase">{opt.label}</span>
               </button>
             ))}
           </div>
+
+          {/* Переключатель языка — мобильный */}
           <div className="flex items-center rounded-full border border-border bg-white p-0.5 text-[11px] font-bold md:hidden">
-            {(["ru", "kg"] as Lang[]).map((l) => (
+            {LANG_OPTIONS.map((opt) => (
               <button
-                key={l}
+                key={opt.value}
                 type="button"
-                onClick={() => setLang(l)}
-                className={`min-h-[36px] min-w-[32px] rounded-full px-2 py-1 uppercase transition-colors ${lang === l ? "bg-navy text-white" : "text-navy/70"}`}
-                aria-pressed={lang === l}
-                aria-label={`switch language to ${l}`}
+                onClick={() => setLang(opt.value)}
+                className={`flex min-h-[36px] items-center gap-1 rounded-full px-2 py-1 transition-colors ${
+                  lang === opt.value ? "bg-navy text-white" : "text-navy/70"
+                }`}
+                aria-pressed={lang === opt.value}
+                aria-label={`switch language to ${opt.label}`}
               >
-                {l}
+                <span className="text-sm leading-none">{opt.flag}</span>
+                <span className="uppercase">{opt.label}</span>
               </button>
             ))}
           </div>
-          <a
+
+          
             href={`tel:${PHONE_TEL}`}
             className="hidden min-h-[44px] items-center gap-2 rounded-full bg-cyan px-4 py-2 text-sm font-bold text-white shadow transition-all hover:shadow-[var(--shadow-glow)] sm:inline-flex"
           >
