@@ -188,7 +188,7 @@ export const projects: Project[] = [
   },
   {
     id: "p3",
-    src: p3,
+    src: w3,
     category: "pools",
     titleRu: "Спортивный бассейн с дорожками",
     titleKg: "Жолу бар спорттук бассейн",
@@ -202,7 +202,7 @@ export const projects: Project[] = [
   },
   {
     id: "p4",
-    src: w3,
+    src: p3,
     category: "pools",
     titleRu: "Спортивный бассейн",
     titleKg: "Спорттук бассейн",
